@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" type="text/css" href="style-02.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <!-- Rating state start -->
+    <div class="container">
+      <div class="interactive-rating-component">
+        <div class="thank-you-component">
+          <img src="images/illustration-thank-you.svg" />
+          <!-- Thank you state start -->
+          <div class="score-box">
+            You selected <span id="score">x</span>
+            <!-- Add rating here -->
+            out of 5
+          </div>
+          <div>
+            <p class="title">Thank you!</p>
+            <p class="text-msg">
+              We appreciate you taking the time to give a rating. If you ever
+              need more support, don’t hesitate to get in touch!
+            </p>
+          </div>
+          <!-- Thank you state end -->
+        </div>
+      </div>
+    </div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedScore = parseInt(urlParams.get("score"));
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = selectedScore;
+    </script>
+  </body>
+</html>
